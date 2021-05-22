@@ -1,13 +1,51 @@
+import ExpenseItem from "./components/Expenses/ExpenseItem";
+import Expenses from "./components/Expenses/Expenses";
 import "./App.css";
-import ExpenseItem from "./components/ExpenseItem";
 
-function App() {
+const App = () => {
+  const expenses = [
+    {
+      id: "e1",
+      title: "Car Insurance",
+      amount: "$450",
+      date: new Date(2021, 4, 22),
+    },
+    {
+      id: "e2",
+      title: "Toilet Paper",
+      amount: "$45",
+      date: new Date(2021, 9, 10),
+    },
+    {
+      id: "e3",
+      title: "Chair",
+      amount: "$40",
+      date: new Date(2021, 3, 2),
+    },
+    {
+      id: "e4",
+      title: "Wooden Desk",
+      amount: "$400",
+      date: new Date(2020, 4, 12),
+    },
+  ];
+
+  /**
+ * ? alternative for JSX
+    return React.createElement(
+    'div',
+    {},
+    React.createElement('h2', {}, "Let's get started!"),
+    React.createElement(Expenses, { items: expenses })
+  );
+ */
+
   return (
     <div className="App">
-      <h2>Hi There! </h2>
-      <ExpenseItem></ExpenseItem>
+      <h2>Let's get started!</h2>
+      <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default App;
