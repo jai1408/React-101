@@ -8,11 +8,13 @@ const ExpenseItem = (props) => {
    * ? why to use const below for title & setTitle
    * ! because we are not changing the value by assigning, we are changing value by set method.
    */
+  // eslint-disable-next-line
   const [title, setTitle] = useState(props.title); //destructuring Modern JS
   //let title = props.title;
   //this clickHandler is not updating title because React is only rendering its component once.
   //so we will use react hooks `useState`
-  const clickHandeler = () => {
+  // eslint-disable-next-line
+  const clickHandler = () => {
     //title = "Updated Value!";
     setTitle("Updated Value!");
     /*
@@ -23,14 +25,16 @@ const ExpenseItem = (props) => {
     //console.log(title);
   };
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">{props.amount}</div>
-        {/* <button onClick={clickHandeler}>Click me!</button> */}
-      </div>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">{props.amount}</div>
+          {/* <button onClick={clickHandler}>Click me!</button> */}
+        </div>
+      </Card>
+    </li>
   );
 };
 
